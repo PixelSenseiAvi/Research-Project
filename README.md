@@ -20,7 +20,23 @@ The assessment is done on two knot-tying sequences forehand throw and backhand
 throw.
 
 # Results
+## YOLO
 ![Alt text](https://github.com/rockchik/Research-Project/blob/master/Yolo.jpg?raw=true "YOLO")
+### Precision Recall Graphs for Object Detection
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/hand_l.png?raw=true "PrecisionRecall")
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/hand_r.png?raw=true "PrecisionRecall")
+## MultiView Bootstraping on Backhand throw
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/bht_hand.PNG?raw=true "MB")
+## MultiView Bootstraping on forehand throw
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/fht_hand.PNG?raw=true "MB")
+## Convolutional Pose Machines for hands
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_128.jpg?raw=true "MB")
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_145.jpg?raw=true "MB1")
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_150.jpg?raw=true "MB2")
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_47.jpg?raw=true "MB3")
+### Sample Convolutinal Pose Machines
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/sample_cpm.png?raw=true "MB4")
+
 
 # Conclusion
 Although, our proposed pipeline does not generalize well on the given pipeline.  
