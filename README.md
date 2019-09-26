@@ -20,6 +20,8 @@ The assessment is done on two knot-tying sequences forehand throw and backhand
 throw.
 
 # Results
+![Alt text](https://github.com/rockchik/Research-Project/blob/master/Yolo.jpg?raw=true "YOLO")
+
 # Conclusion
 Although, our proposed pipeline does not generalize well on the given pipeline.  
 The keypoint estimation techniques have
