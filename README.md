@@ -1,53 +1,74 @@
-# Evaluation of knot-tying process using modern Computer Vision techniques [Research Project]
-Surgical trainees have to learn surgical skills before undergoing real surgeries. Knot-tying is one such process. It is a complex skill that is acquired through several hours of training. This process requires expert supervision for continuous feedback. This research aims to aid the assessment of the knot-tying skill with the help of modern Computer Vision techniques.
-The understanding of a scene in the given setting can be achieved by analysis of Hand Gestures. The proposed pipeline includes Hand Detection, Hand Pose Estimation and Phase Recognition techniques. Several approaches for hand detection has been tested and compared side-by-side. It includes one-stage detectors like YOLO and SSD; and two-stage detectors like Mask r-cnn on the knot-tying data. Several pose estimation techniques like Convolutional Pose Machines and Hand Keypoint Detection in Single Images using Multiview Bootstrapping. It is followed by the gesture recognition task. The assessment is done on two knot-tying sequences forehand throw and backhand throw.
+# Evaluation of Knot-Tying Process Using Modern Computer Vision Techniques
 
-# Results
-## YOLO
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/Yolo.jpg?raw=true "YOLO")
-### Precision Recall Graphs for Object Detection
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/hand_l.png?raw=true "PrecisionRecall")
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/hand_r.png?raw=true "PrecisionRecall")
-## MultiView Bootstraping on Backhand throw
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/bht_hand.PNG?raw=true "MB")
-## MultiView Bootstraping on forehand throw
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/fht_hand.PNG?raw=true "MB")
-## Convolutional Pose Machines for hands
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_128.jpg?raw=true "MB")
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_145.jpg?raw=true "MB1")
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_150.jpg?raw=true "MB2")
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/fr_47.jpg?raw=true "MB3")
-### Sample Convolutinal Pose Machines
-![Alt text](https://github.com/rockchik/Research-Project/blob/master/sample_cpm.png?raw=true "MB4")
+## Overview
 
+Surgical trainees must master complex skills like knot-tying through extensive training. This process demands expert supervision for effective feedback. Our research aims to enhance the assessment of knot-tying skills using modern computer vision techniques. By analyzing hand gestures, we propose a pipeline that includes Hand Detection, Hand Pose Estimation, and Phase Recognition. This study evaluates various hand detection and pose estimation approaches on knot-tying sequences.
 
-# Conclusion
-Although, our proposed pipeline does not generalize well on the given data. The keypoint estimation techniques have shown the results on par with our expectations. The failure to detect hand on some frames resulted in failure of the keypoint estimations due to the very nature of our proposed pipeline. Performance of the employed algorithms can be improved by creating more data in a controlled environment.
+## Proposed Pipeline
 
-## Discussion 
-This research incorporates the use of Deep Learning techniques to achieve the results
-over a similar domain. Many of the Deep Learning algorithms were designed for specific
-puposes on works well on very specific dataset. For many tasks, the traditional Computer Vision Algorithms
-works better.
-Overall the knot-tying is a complex process and evaluation can be complicated too,
-due to the occlusions present in the recorded data.
+1. **Hand Detection**: We use YOLOv3, a trained model, to detect hands in the frame.
+2. **Hand Pose Estimation**: We employ Convolutional Pose Machines (CPM) and Multiview Bootstrapping (CMU), both pretrained, for hand pose estimation.
+3. **Gesture Recognition**: Keypoints are analyzed using Optical Flow to assess knot-tying phases, including forehand and backhand throws.
 
-## Limitation
-Generally, hand can take a lot of complex shapes, creating a lot of occlusions. Especially, when it comes to the knot-tying process.
+## Results
 
-• Although, the results obtained are promising, developing an end-to-end integrated system is a complex task.
-• The results obtained are promising. However, there are still disparities in the results obtained by these algorithms especially the Object detection tasks.
+### YOLOv3
 
-# Future Work
-## Keypoints
-In our experiments, all the hand joints are initialized as the keypoints which makes the process harder to analyze. For the evaluation purposes, only the articulation of the index finger and thumb is needed for the main hand. The present state-of-the-art has been achieved by using depth-images for keyppoint estimation techniques. So, incorporating the use of depth images may further increase
-the accuracy of keypoints.
+- **Detection**: 
+  ![YOLOv3](https://github.com/rockchik/Research-Project/blob/master/Yolo.jpg?raw=true "YOLOv3")
+- **Precision-Recall Graphs for Object Detection**:
+  ![Precision Recall (Left)](https://github.com/rockchik/Research-Project/blob/master/hand_l.png?raw=true "Precision Recall (Left)")
+  ![Precision Recall (Right)](https://github.com/rockchik/Research-Project/blob/master/hand_r.png?raw=true "Precision Recall (Right)")
 
-## Bounding boxes
-Many of the failures of our experiments are due to the failure of detection of bounding boxes. So, much of the focus of the future work should be on increasing the accuracy of the bounding boxes. The miss rate for the bounding boxes can be decreased significantly by creating high-quality annotations.
-## Data
-Secondly, to achieve the state-of-the-art results it is necessary to create a high-quality dataset. The dataset should be collected in a controlled environment and the data should be recorded by the expert surgeons. Additionally, multiple camera angles should be tested for keypoint estimation techniques.
-## Analysis
-The estimation of keypoints can be incorporated with the use of traditional methods like Optical flow to analyze the gestures of the hand.
-Also, other approaches like matching correspondences in the video can be tested
+### Multiview Bootstrapping
 
+- **Backhand Throw**:
+  ![Backhand Throw](https://github.com/rockchik/Research-Project/blob/master/bht_hand.PNG?raw=true "Backhand Throw")
+- **Forehand Throw**:
+  ![Forehand Throw](https://github.com/rockchik/Research-Project/blob/master/fht_hand.PNG?raw=true "Forehand Throw")
+
+### Convolutional Pose Machines
+
+- **Sample Images**:
+  ![Pose 1](https://github.com/rockchik/Research-Project/blob/master/fr_128.jpg?raw=true "Pose 1")
+  ![Pose 2](https://github.com/rockchik/Research-Project/blob/master/fr_145.jpg?raw=true "Pose 2")
+  ![Pose 3](https://github.com/rockchik/Research-Project/blob/master/fr_150.jpg?raw=true "Pose 3")
+  ![Pose 4](https://github.com/rockchik/Research-Project/blob/master/fr_47.jpg?raw=true "Pose 4")
+
+- **Sample Convolutional Pose Machines**:
+  ![Sample CPM](https://github.com/rockchik/Research-Project/blob/master/sample_cpm.png?raw=true "Sample CPM")
+
+## Conclusion
+
+Our proposed pipeline does not generalize well across the given data. Keypoint estimation techniques performed as expected, though failures in hand detection led to inaccuracies in keypoint estimation. Performance can be improved with more controlled data.
+
+## Discussion
+
+Deep Learning techniques have shown potential but often perform well on specific datasets. Traditional Computer Vision algorithms sometimes provide better results. The knot-tying process, with its inherent occlusions, poses challenges for accurate evaluation.
+
+## Limitations
+
+- **Complex Hand Shapes**: Knot-tying involves complex hand shapes that create significant occlusions.
+- **System Complexity**: Developing an end-to-end integrated system remains challenging.
+- **Algorithm Disparities**: Object detection and keypoint estimation algorithms have shown disparities in performance.
+
+## Future Work
+
+### Keypoints
+
+- Focus on specific keypoints (index finger and thumb) rather than all hand joints.
+- Incorporate depth images for improved accuracy in keypoint estimation.
+
+### Bounding Boxes
+
+- Improve bounding box detection accuracy by creating high-quality annotations.
+
+### Data
+
+- Develop a high-quality dataset collected in a controlled environment with expert surgeons.
+- Test multiple camera angles for better keypoint estimation.
+
+### Analysis
+
+- Integrate traditional methods like Optical Flow with keypoint estimation.
+- Explore matching correspondences in video for gesture analysis.
