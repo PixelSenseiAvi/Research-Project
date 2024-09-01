@@ -8,7 +8,7 @@ Surgical trainees must master complex skills like knot-tying through extensive t
 
 1. **Hand Detection**: We use YOLOv3, a trained model, to detect hands in the frame.
 2. **Hand Pose Estimation**: We employ Convolutional Pose Machines (CPM) and Multiview Bootstrapping (CMU), both pretrained, for hand pose estimation.
-3. **Gesture Recognition**: Keypoints are analyzed using Optical Flow to assess knot-tying phases, including forehand and backhand throws.
+3. **Optical Flow**: Keypoints are analyzed using Optical Flow to assess knot-tying phases, including forehand and backhand throws.
 
 ## Results
 
